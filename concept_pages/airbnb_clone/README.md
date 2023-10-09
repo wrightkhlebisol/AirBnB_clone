@@ -19,7 +19,7 @@ After 4 months, you will have a complete web application composed by:
 Final product
 -------------
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/fe2e3e7701dec72ce612472dab9bb55fe0e9f6d4.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20231009%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231009T183431Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=efc158a651cc726518cdaea038916ed8a196f39853942f5b484769af35474978) ![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/da2584da58f1d99a72f0a4d8d22c1e485468f941.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20231009%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231009T183431Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=ffa11b1f060447098e39eb265186c37879180204596e7d191febde2daff4a175)
+![](https://github.com/wrightkhlebisol/AirBnB_clone/blob/main/concept_pages/images/f0.png) ![](https://github.com/wrightkhlebisol/AirBnB_clone/blob/main/concept_pages/images/f1.png)
 
 Concepts to learn
 -----------------
@@ -50,7 +50,7 @@ This abstraction will also allow you to change the type of storage easily withou
 
 The console will be a tool to validate this storage engine
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20231009%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231009T183431Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=e0523391f5d62fcf9cae1ea6a607f1fd00b0da36fa5f586e576689ce4b7149db)
+![](https://github.com/wrightkhlebisol/AirBnB_clone/blob/main/concept_pages/images/f2.png)
 
 ### Web static
 
@@ -58,35 +58,35 @@ The console will be a tool to validate this storage engine
 *   create the HTML of your application
 *   create template of each object
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/87c01524ada6080f40fc.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20231009%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231009T183431Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=962515bd69e93f3daad752d9c6d4127ee0de9a68f547fe92c6d5fc9f03e6a37b)
+![](https://github.com/wrightkhlebisol/AirBnB_clone/blob/main/concept_pages/images/f3.png)
 
 ### MySQL storage
 
 *   replace the file storage by a Database storage
 *   map your models to a table in database by using an O.R.M.
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/5284383714459fa68841.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20231009%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231009T183431Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=d1e63a3fd6f91fa43fbda09e662f0380ffaff1c8f6e680d4b8752a1c57f64376)
+![](https://github.com/wrightkhlebisol/AirBnB_clone/blob/main/concept_pages/images/f4.png)
 
 ### Web framework - templating
 
 *   create your first web server in Python
 *   make your static HTML file dynamic by using objects stored in a file or database
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/cb778ec8a13acecb53ef.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20231009%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231009T183431Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=c881063345ebc16856f7eb834e1e949bba4c341b380fc75effc2e47bfd661d5d)
+![](https://github.com/wrightkhlebisol/AirBnB_clone/blob/main/concept_pages/images/f5.png)
 
 ### RESTful API
 
 *   expose all your objects stored via a JSON web interface
 *   manipulate your objects via a RESTful API
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/06fccc41df40ab8f9d49.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20231009%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231009T183431Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=702723440080448a4648929567d1d21538748fbf30d4c1fff809d36889259e3e)
+![](https://github.com/wrightkhlebisol/AirBnB_clone/blob/main/concept_pages/images/f6.png)
 
 ### Web dynamic
 
 *   learn JQuery
 *   load objects from the client side by using your own RESTful API
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/d2d06462824fab5846f3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20231009%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231009T183431Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=68b499cbffed992b14f64ac4ce2f4f85ef2076bc0c750c5cf2065f4e8f3f4216)
+![](https://github.com/wrightkhlebisol/AirBnB_clone/blob/main/concept_pages/images/f7.png)
 
 Files and Directories
 ---------------------
@@ -276,6 +276,6 @@ How to make it readable: [strftime](https://strftime.org/)
 Data diagram
 ------------
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/99e1a8f2be8c09d5ce5ac321e8cf39f0917f8db5.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20231009%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231009T183431Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=6473d5904af721d9a197d88a10dd67918ebeced44996c0ca8b611332072564c2)
+![](https://github.com/wrightkhlebisol/AirBnB_clone/blob/main/concept_pages/images/f8.jpg)
 
 Copyright © 2023 ALX, All rights reserved.
