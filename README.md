@@ -5,8 +5,8 @@
 
 _For this project, we expect you to look at these concepts:_
 
-*   [Python packages](/concepts/66)
-*   [AirBnB clone](/concepts/74)
+*   [Python packages](https://github.com/wrightkhlebisol/AirBnB_clone/tree/main/concept_pages/python_packages)
+*   [AirBnB clone](https://github.com/wrightkhlebisol/AirBnB_clone/tree/main/concept_pages/airbnb_clone)
 
 ![](https://github.com/wrightkhlebisol/AirBnB_clone/blob/main/images/00.png)
 
