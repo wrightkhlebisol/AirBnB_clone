@@ -23,3 +23,7 @@ class TestBase(unittest.TestCase):
         self.assertIsNotNone(self.my_model.created_at)
         self.assertIsNotNone(self.my_model.updated_at)
 
+    def test_right_value(self):
+        self.assertAlmostEqual(self.my_model.my_number, 89)
+        self.assertEqual(self.my_model.name, "My First Model")
+
