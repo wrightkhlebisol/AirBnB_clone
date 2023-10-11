@@ -18,8 +18,7 @@ class BaseModel:
     def __str__(self):
         """string method
         """
-        class_name = f"[self.__class__.__name__]"
-        obj_id = f"(self.id)"
-        obj_dict = f"self.__dict__"
-        return class_name + " " + obj_id + " " + obj_dict
-        
+        class_name = self.__class__.__name__
+        obj_id = self.id
+        obj_dict = self.__dict__
+        return f"[{class_name}] ({obj_id}) {obj_dict}" 
