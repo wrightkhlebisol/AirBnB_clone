@@ -18,3 +18,8 @@ class TestBase(unittest.TestCase):
         self.assertTrue(isinstance(self.my_model.created_at, datetime.datetime))
         self.assertTrue(isinstance(self.my_model.updated_at, datetime.datetime))
         
+    def test_value_is_set(self):
+        self.assertIsNotNone(self.my_model.id)
+        self.assertIsNotNone(self.my_model.created_at)
+        self.assertIsNotNone(self.my_model.updated_at)
+
