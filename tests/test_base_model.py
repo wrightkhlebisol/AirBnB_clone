@@ -42,13 +42,18 @@ class TestBase(unittest.TestCase):
 
     def test_recreate_class_from_dict(self):
         my_model_json = self.my_model.to_dict()
-        new_class_from_json = BaseModel(**my_model_json)
-        self.assertTrue(isinstance(new_class_from_json, BaseModel))
-        self.assertEqual(my_model_json.get('id'), new_class_from_json.id)
-        self.assertEqual(my_model_json.get('name'), new_class_from_json.name)
-        self.assertEqual(my_model_json.get('my_number'), new_class_from_json.my_number)
-        self.assertEqual(my_model_json.get('created_at'), new_class_from_json.created_at.isoformat())
-        self.assertEqual(my_model_json.get('updated_at'), new_class_from_json.updated_at.isoformat())
+        class_from_json = BaseModel(**my_model_json)
+        self.assertTrue(isinstance(class_from_json, BaseModel))
+        self.assertEqual(my_model_json.get('id'), class_from_json.id)
+        formatted_name = class_from_json.name
+        formatted_number = class_from_json.my_number
+        formatted_created_at = class_from_json.created_at.isoformat()
+        formatted_updated_at = class_from_json.created_at.isoformat()
+
+        self.assertEqual(my_model_json.get('name'), formatted_name)
+        self.assertEqual(my_model_json.get('my_number'), formatted_my_number)
+        self.assertEqual(my_model_json.get('created_at'), formatted_created_at)
+        self.assertEqual(my_model_json.get('updated_at'), formatted_updated_at)
 
     def test_exception(self):
         pass
