@@ -27,3 +27,9 @@ class TestBase(unittest.TestCase):
         self.assertAlmostEqual(self.my_model.my_number, 89)
         self.assertEqual(self.my_model.name, "My First Model")
 
+"""
+my_model.save()
+my_model_json = my_model.to_dict()
+for key in my_model_json.keys():
+    print("\t{}: ({}) - {}".format(key, type(my_model_json[key]), my_model_json[key]))
+"""
