@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """BaseModel that defines all common attributes/methods
 """
+import storage
 import uuid
 from datetime import datetime
 
@@ -23,6 +24,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            storage.new(self)
 
     def __str__(self):
         """string method
@@ -40,6 +42,7 @@ class BaseModel:
         """updates public instance variable updated_at
         """
         self.updated_at = datetime.now()
+        storage.save(self)
 
     def to_dict(self):
         """returns dictionary containing all keys/values
