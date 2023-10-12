@@ -24,7 +24,7 @@ class FileStorage():
             Sets private class attribute __object to given
             object (obj) with key "classname.obj[id]"
         """
-        key = f"{self.__class__.__name__}.{obj.get("id")}"
+        key = f"{self.__class__.__name__}.{obj.get('id')}"
         self.__objects[key] = obj
 
     def save(self):
