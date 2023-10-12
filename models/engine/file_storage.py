@@ -5,6 +5,8 @@ import json
 
 
 class FileStorage():
+    """File Storage class that serializes and deserializes
+    """
 
     __file_path = None
     __objects = {}
@@ -15,27 +17,27 @@ class FileStorage():
 
             Returns: __objects (dict)
         """
-        return __objects
+        return self.__objects
 
     def new(self, obj):
         """
             Sets private class attribute __object to given
             object (obj) with key "classname.obj[id]"
         """
-        key = f"{}.{}".format(self.__class__.__name__, obj.get("id"))
-        __objects[key] = obj
+        key = f"{self.__class__.__name__}.{obj.get("id")}"
+        self.__objects[key] = obj
 
     def save(self):
         """
             Serializes object to JSON and save to file
         """
-        with open(__file_path, "w", encoding="utf-8") as f:
-            json.dump(__objects, f)
+        with open(self.__file_path, "w", encoding="utf-8") as f:
+            json.dump(self.__objects, f)
 
     def reload(self):
         """
             Deserializes JSON file to __objects
         """
-        if __file_path is not None:
-            with open(__file_path, encoding="utf-8") as f:
-                __objects = json.load(f)
+        if self.__file_path is not None:
+            with open(self.__file_path, encoding="utf-8") as f:
+                self.__objects = json.load(f)
