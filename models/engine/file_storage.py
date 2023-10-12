@@ -2,13 +2,14 @@
 """ FileStorage class serializes instances to a JSON
 file and deserializes JSON file to instances """
 import json
+import os
 
 
 class FileStorage():
     """File Storage class that serializes and deserializes
     """
 
-    __file_path = None
+    __file_path = 'file.json'
     __objects = {}
 
     def all(self):
@@ -24,8 +25,8 @@ class FileStorage():
             Sets private class attribute __object to given
             object (obj) with key "classname.obj[id]"
         """
-        key = f"{self.__class__.__name__}.{obj.get('id')}"
-        self.__objects[key] = obj
+        key = f"{self.__class__.__name__}.{obj.id}"
+        self.__objects[key] = obj.to_dict()
 
     def save(self):
         """
@@ -38,6 +39,6 @@ class FileStorage():
         """
             Deserializes JSON file to __objects
         """
-        if self.__file_path is not None:
+        if os.path.exists(self.__file_path):
             with open(self.__file_path, encoding="utf-8") as f:
                 self.__objects = json.load(f)
