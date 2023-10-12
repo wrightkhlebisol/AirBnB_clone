@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """BaseModel that defines all common attributes/methods
 """
-import storage
+from . import storage
 import uuid
 from datetime import datetime
 
@@ -42,7 +42,7 @@ class BaseModel:
         """updates public instance variable updated_at
         """
         self.updated_at = datetime.now()
-        storage.save(self)
+        storage.save()
 
     def to_dict(self):
         """returns dictionary containing all keys/values
@@ -51,6 +51,7 @@ class BaseModel:
         Returns: __dict__ (dictionary)
         """
         dict_copy = self.__dict__.copy()
+        print("self ", dir(self))
         dict_copy["__class__"] = self.__class__.__name__
         dict_copy["created_at"] = self.created_at.isoformat()
         dict_copy["updated_at"] = self.updated_at.isoformat()
