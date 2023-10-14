@@ -4,6 +4,8 @@
 import cmd
 import sys
 
+from models import base_model
+
 
 class HBNBCommand(cmd.Cmd):
     """Implements various commands as methods
@@ -26,11 +28,38 @@ class HBNBCommand(cmd.Cmd):
         """
         sys.exit()
 
+    def do_create(self, line):
+        """Creates new instance of BaseModel, save it to JSON file
+        Usage: create <class name>
+        Args:
+            class_name: The name of the class to create instance of
+        Returns:
+            None
+        """
+        args = line.split()
+
+        if len(args) == 0:
+            print("** class name missing **")
+            return
+
+        cls_name = args[0]
+
+        if not hasattr(base_model, cls_name):
+            print("** class doesn't exist **")
+            return
+
+        cls_obj = getattr(base_model, cls_name)
+        model = cls_obj()
+        model.save()
+        print(model.id)
+
+
     def postcmd(self, stop, line):
         """Program exit cleanly in response to the quit command
         """
         if stop:
             return True
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
