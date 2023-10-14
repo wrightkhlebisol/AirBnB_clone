@@ -3,6 +3,7 @@
 file and deserializes JSON file to instances """
 import json
 import os
+from .. import base_model
 
 
 class FileStorage():
@@ -26,14 +27,15 @@ class FileStorage():
             object (obj) with key "classname.obj[id]"
         """
         key = f"{obj.__class__.__name__}.{obj.id}"
-        self.__objects[key] = obj.to_dict()
+        self.__objects[key] = obj
 
     def save(self):
         """
             Serializes object to JSON and save to file
         """
         with open(self.__file_path, "w", encoding="utf-8") as f:
-            json.dump(self.__objects, f)
+            _obj = { k : v.to_dict() for k, v in self.__objects.items() }
+            json.dump(_obj, f)
 
     def reload(self):
         """
@@ -41,4 +43,8 @@ class FileStorage():
         """
         if os.path.exists(self.__file_path):
             with open(self.__file_path, encoding="utf-8") as f:
-                self.__objects = json.load(f)
+                json_dict = json.load(f)
+                for obj in json_dict.values():
+                    class_n = obj['__class__']
+                    del obj['__class__']
+                    self.new(eval(f'base_model.{class_n}')(**obj))
