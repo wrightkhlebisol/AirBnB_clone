@@ -4,7 +4,11 @@ from .base_model import BaseModel
 
 
 class City(BaseModel):
-    """ City Model """
+    """ City Model
 
+    Attributes:
+        state_id (str): State.id
+        name (str): City name
+    """
     state_id = ""
     name = ""
