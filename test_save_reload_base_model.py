@@ -13,7 +13,7 @@ my_model = BaseModel()
 my_model.name = "My_First_Model"
 my_model.my_number = 89
 my_model.another = "there"
-my_model.number = [1,2,3]
+my_model.number = [1, 2, 3]
 
 my_model.save()
 print(my_model)
