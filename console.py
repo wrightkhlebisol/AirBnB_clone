@@ -53,6 +53,43 @@ class HBNBCommand(cmd.Cmd):
         model.save()
         print(model.id)
 
+    def do_show(self, line):
+        """Prints the string representation of an instance
+        based on the class name and id
+        Usage: show <class name> <id>
+        Args:
+            class_name: The name of the class to show
+                        the string representation
+        Returns:
+            None
+        """
+        args = line.split()
+
+        if len(args) == 0:
+            print("** class name missing **")
+            return
+
+        cls_name = args[0]
+
+        if not hasattr(base_model, cls_name):
+            print("** class doesn't exist **")
+            return
+
+        if len(args) == 1:
+            print("** instance id missing **")
+            return
+
+        id_num = args[1]
+
+        cls_obj = getattr(base_model, cls_name)
+        model = getattr(cls_obj, id_num)
+
+        if model is None:
+            print("** no instance found **")
+            return
+
+        print(model)
+
 
     def postcmd(self, stop, line):
         """Program exit cleanly in response to the quit command
