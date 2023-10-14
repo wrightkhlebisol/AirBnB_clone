@@ -90,7 +90,6 @@ class HBNBCommand(cmd.Cmd):
 
         print(model)
 
-
     def postcmd(self, stop, line):
         """Program exit cleanly in response to the quit command
         """
