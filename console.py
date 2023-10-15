@@ -99,7 +99,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
         print(storage.all()[f"{cls_name}.{id_num}"])
-    
+
     def do_destroy(self, line):
         """Deletes an instance
         based on the class name and id
@@ -131,8 +131,9 @@ class HBNBCommand(cmd.Cmd):
         if f"{cls_name}.{id_num}" not in storage.all():
             print("** no instance found **")
             return
-        
-        del(storage.all()[f"{cls_name}.{id_num}"])
+
+        del (storage.all()[f"{cls_name}.{id_num}"])
+
         storage.save()
 
     def do_all(self, line):
@@ -155,7 +156,8 @@ class HBNBCommand(cmd.Cmd):
         if cls_name not in self.__classes:
             print("** class doesn't exist **")
 
-        print([str(v) for k, v in storage.all().items() if k.startswith(cls_name)])
+        key = k.startswith(cls_name)
+        print([str(v) for k, v in storage.all().items() if key])
 
     def do_update(self, line):
         """Updates an instance based on the class name and id
@@ -198,8 +200,6 @@ class HBNBCommand(cmd.Cmd):
         if len(args) == 3:
             print("** value missing **")
             return
-
-
 
     def postcmd(self, stop, line):
         """Program exit cleanly in response to the quit command
