@@ -225,6 +225,24 @@ class HBNBCommand(cmd.Cmd):
             setattr(obj, attr_name, attr_value)
         storage.save()
 
+    def default(self, line):
+        """Retrieves all instances of a class
+        Usage: <class name>.all()
+        Args:
+            <class name>: The class name
+            all(): the method
+        Returns:
+            None
+        """
+        args = line.split('.')
+
+        cls_name = args[0]
+        cls_method = args[1]
+
+        if cls_name in self.__classes:
+            if cls_method == "all()":
+                self.do_all(cls_name)
+
     def postcmd(self, stop, line):
         """Program exit cleanly in response to the quit command
         """
