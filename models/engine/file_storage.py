@@ -3,7 +3,7 @@
 file and deserializes JSON file to instances """
 import json
 import os
-from models import base_model
+from models import base_model, user, amenity, city, place, review, state
 
 
 class FileStorage():
@@ -12,6 +12,15 @@ class FileStorage():
 
     __file_path = 'file.json'
     __objects = {}
+    class_dict = {
+        'Amenity': 'amenity',
+        'BaseModel': 'base_model',
+        'City': 'city',
+        'Place': 'place',
+        'Review': 'review',
+        'State': 'state',
+        'User': 'user'
+    }
 
     def all(self):
         """
@@ -46,5 +55,6 @@ class FileStorage():
                 json_dict = json.load(f)
                 for obj in json_dict.values():
                     class_n = obj['__class__']
+                    module_n = self.class_dict[class_n]
                     del obj['__class__']
-                    self.new(eval(f"base_model.{class_n}")(**obj))
+                    self.new(eval(f'{module_n}.{class_n}')(**obj))
