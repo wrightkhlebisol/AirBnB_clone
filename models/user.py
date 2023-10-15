@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""User Model that inherits from BaseModel """
+"""User Model that inherits from BaseModel
+"""
 from .base_model import BaseModel
 
 

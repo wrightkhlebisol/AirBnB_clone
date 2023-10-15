@@ -3,7 +3,7 @@
 """
 import cmd
 
-from models import base_model
+from models import base_model, user, amenity, city, place, review, state
 from models import storage
 
 
@@ -12,7 +12,13 @@ class HBNBCommand(cmd.Cmd):
     """
     prompt = "(hbnb) "
     __classes = {
-            "BaseModel"
+            "BaseModel",
+            "User",
+            "Amenity",
+            "City",
+            "Place",
+            "Review",
+            "State"
     }
 
     def do_quit(self, line):
