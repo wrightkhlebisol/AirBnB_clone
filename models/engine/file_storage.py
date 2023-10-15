@@ -43,9 +43,9 @@ class FileStorage():
             Deserializes JSON file to __objects
         """
         if os.path.exists(self.__file_path):
-            with open(self.__file_path, encoding="utf-8") as f:
+            with open(self.__file_path, "r", encoding="utf-8") as f:
                 json_dict = json.load(f)
                 for obj in json_dict.values():
                     class_n = obj['__class__']
                     del obj['__class__']
-                    self.new(eval(f'base_model.{class_n}')(**obj))
+                    self.new(eval(f"base_model.{class_n}")(**obj))
