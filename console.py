@@ -233,7 +233,7 @@ class HBNBCommand(cmd.Cmd):
             Updates an instance based on its ID
             Updates an instance based on it's ID with a dict
 
-        Usage:  
+        Usage:
             <class name>.all()
             <class name>.count()
             <class name>.show(<id>)
@@ -245,6 +245,13 @@ class HBNBCommand(cmd.Cmd):
                 <class name>: The class name
                 all(): count command
                 count(): count command
+                <id>: the id
+                show(): show command
+                destroy(): destroy command
+                update(): update command
+                <attribute name>: attribute name
+                <attribute value>: attribute value
+                <dictionary representation>: dict representation
         Returns:
             None
         """
@@ -260,6 +267,9 @@ class HBNBCommand(cmd.Cmd):
                 _list = [v for k, v in storage.all().items()
                          if k.startswith(cls_name)]
                 print(len(_list))
+            elif cls_cmd.startswith("show"):
+                _id = cls_cmd.split('"')[1]
+                self.do_show(f"{cls_name} {_id}")
 
     def postcmd(self, stop, line):
         """Program exit cleanly in response to the quit command
