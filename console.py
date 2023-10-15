@@ -150,6 +150,48 @@ class HBNBCommand(cmd.Cmd):
 
         print([str(v) for k, v in storage.all().items() if k.startswith(cls_name)])
 
+    def do_update(self, line):
+        """Updates an instance based on the class name and id
+        by adding or updating attribute
+        Usage: update <class name> <id> <attribute name> "<attribute value>"
+        Args:
+            <class name>: The class name
+            <id>: the class name id
+            <attribute name>: the class attribute name
+            "<attribute value>": the class attribute value
+        Returns:
+            None
+        """
+        args = line.split()
+
+        if len(args) == 0:
+            print("** class name missing **")
+            return
+
+        cls_name = args[0]
+
+        if not hasattr(base_model, cls_name):
+            print("** class doesn't exist **")
+            return
+
+        if len(args) == 1:
+            print("** instance id missing **")
+            return
+
+        id_num = args[1]
+
+        if f"{cls_name}.{id_num}" not in storage.all():
+            print("** no instance found **")
+            return
+
+        if len(args) == 2:
+            print("** attribute name missing **")
+            return
+
+        if len(args) == 3:
+            print("** value missing **")
+            return
+
 
 
     def postcmd(self, stop, line):
