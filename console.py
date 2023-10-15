@@ -129,6 +129,28 @@ class HBNBCommand(cmd.Cmd):
         del(storage.all()[f"{cls_name}.{id_num}"])
         storage.save()
 
+    def do_all(self, line):
+        """Prints all string representation of all instances
+        based or not on the class name.
+        Usage: all <class name> or all
+        Args:
+            <class name>: The class name
+        Returns:
+            None
+        """
+        args = line.split()
+
+        if len(args) == 0:
+            print([str(value) for value in storage.all().value()])
+
+        cls_name = args[0]
+
+        if cls_name not in self.__classes:
+            print("** class doesn't exist **")
+
+        print([str(v) for k, v in storage.all().items() if k.startswith([cls_name])])
+
+
 
     def postcmd(self, stop, line):
         """Program exit cleanly in response to the quit command
