@@ -93,6 +93,42 @@ class HBNBCommand(cmd.Cmd):
             return
 
         print(storage.all()[f"{cls_name}.{id_num}"])
+    
+    def do_destroy(self, line):
+        """Deletes an instance
+        based on the class name and id
+        Usage: delete <class name> <id>
+        Args:
+            <class name>: The name of the class to be deleted
+            <id>: the id of the particular instance
+        Returns:
+            None
+        """
+        args = line.split()
+
+        if len(args) == 0:
+            print("** class name missing **")
+            return
+
+        cls_name = args[0]
+
+        if not hasattr(base_model, cls_name):
+            print("** class doesn't exist **")
+            return
+
+        if len(args) == 1:
+            print("** instance id missing **")
+            return
+
+        id_num = args[1]
+
+        if f"{cls_name}.{id_num}" not in storage.all():
+            print("** no instance found **")
+            return
+        
+        del(storage.all()[f"{cls_name}.{id_num}"])
+        storage.save()
+
 
     def postcmd(self, stop, line):
         """Program exit cleanly in response to the quit command
