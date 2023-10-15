@@ -226,11 +226,25 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
 
     def default(self, line):
-        """Retrieves all instances of a class
-        Usage: <class name>.all()
+        """ Retrieves all instances of a class
+            Retrieves the number of instances of a class
+            Retrieves an instance based on its ID
+            Destroys an instance based on its ID
+            Updates an instance based on its ID
+            Updates an instance based on it's ID with a dict
+
+        Usage:  
+            <class name>.all()
+            <class name>.count()
+            <class name>.show(<id>)
+            <class name>.destroy(<id>)
+            <class name>.update(<id>, <attribute name>, <attribute value>)
+            <class name>.update(<id>, <dictionary representation>)
+
         Args:
-            <class name>: The class name
-            all(): the method
+                <class name>: The class name
+                all(): count command
+                count(): count command
         Returns:
             None
         """
