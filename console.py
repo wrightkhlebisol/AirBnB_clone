@@ -201,6 +201,25 @@ class HBNBCommand(cmd.Cmd):
             print("** value missing **")
             return
 
+        obj_id = args[1]
+        obj_key = cls_name + "." + obj_id
+        obj = storage.all()[obj_key]
+
+        attr_name = args[2]
+        attr_value = args[3]
+
+        if attr_value[0] == '"':
+            attr_value = attr_value[1:-1]
+
+        if hasattr(obj, attr_name):
+            attr_type = type(getattr(obj, attr_name))
+            if attr_type in [str, float, int]:
+                attr_value = attr_type(attr_value)
+                setattr(obj, attr_name, attr_value)
+        else:
+            setattr(obj, attr_name, attr_value)
+        storage.save()
+
     def postcmd(self, stop, line):
         """Program exit cleanly in response to the quit command
         """
