@@ -2,7 +2,6 @@
 """Entry point of the command interpreter
 """
 import cmd
-import sys
 
 from models import base_model
 
@@ -11,28 +10,34 @@ class HBNBCommand(cmd.Cmd):
     """Implements various commands as methods
     """
     prompt = "(hbnb) "
+    __classes = {
+            "BaseModel"
+    }
 
     def do_quit(self, line):
         """Quit command to exit the program
+        Usage: quit
         """
-        sys.exit()
+        return True
 
     def do_EOF(self, line):
         """EOF command to exit the program
+        Usage: ctrl + D
         """
         print()
-        sys.exit()
+        return True
 
     def emptyline(self):
         """Empty line + Enter should do nothing
+        Usage: Empty line + Enter
         """
-        sys.exit()
+        return
 
     def do_create(self, line):
         """Creates new instance of BaseModel, save it to JSON file
         Usage: create <class name>
         Args:
-            class_name: The name of the class to create instance of
+            <class name>: The name of the class to create instance of
         Returns:
             None
         """
@@ -44,7 +49,7 @@ class HBNBCommand(cmd.Cmd):
 
         cls_name = args[0]
 
-        if not hasattr(base_model, cls_name):
+        if cls_name not in self.__classes:
             print("** class doesn't exist **")
             return
 
@@ -58,8 +63,9 @@ class HBNBCommand(cmd.Cmd):
         based on the class name and id
         Usage: show <class name> <id>
         Args:
-            class_name: The name of the class to show
+            <class name>: The name of the class to show
                         the string representation
+            <id>: the id of the particular instance
         Returns:
             None
         """
