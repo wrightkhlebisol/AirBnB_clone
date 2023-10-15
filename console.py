@@ -60,10 +60,8 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
 
-        cls_obj = getattr(base_model, cls_name)
-        model = cls_obj()
-        model.save()
-        print(model.id)
+        new_instance = eval(f"{cls_name}")()
+        print(new_instance.id)
 
     def do_show(self, line):
         """Prints the string representation of an instance
@@ -84,7 +82,7 @@ class HBNBCommand(cmd.Cmd):
 
         cls_name = args[0]
 
-        if not hasattr(base_model, cls_name):
+        if cls_name not in self.__classes:
             print("** class doesn't exist **")
             return
 
@@ -118,7 +116,7 @@ class HBNBCommand(cmd.Cmd):
 
         cls_name = args[0]
 
-        if not hasattr(base_model, cls_name):
+        if cls_name not in self.__classes:
             print("** class doesn't exist **")
             return
 
@@ -180,7 +178,7 @@ class HBNBCommand(cmd.Cmd):
 
         cls_name = args[0]
 
-        if not hasattr(base_model, cls_name):
+        if cls_name not in self.__classes:
             print("** class doesn't exist **")
             return
 
