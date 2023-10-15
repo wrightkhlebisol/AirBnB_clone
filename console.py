@@ -237,11 +237,15 @@ class HBNBCommand(cmd.Cmd):
         args = line.split('.')
 
         cls_name = args[0]
-        cls_method = args[1]
+        cls_cmd = args[1]
 
         if cls_name in self.__classes:
-            if cls_method == "all()":
+            if cls_cmd == "all()":
                 self.do_all(cls_name)
+            elif cls_cmd == "count()":
+                _list = [v for k, v in storage.all().items()
+                         if k.startswith(cls_name)]
+                print(len(_list))
 
     def postcmd(self, stop, line):
         """Program exit cleanly in response to the quit command
