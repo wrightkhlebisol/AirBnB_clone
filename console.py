@@ -4,6 +4,7 @@
 import cmd
 
 from models import base_model
+from models import storage
 
 
 class HBNBCommand(cmd.Cmd):
@@ -87,14 +88,11 @@ class HBNBCommand(cmd.Cmd):
 
         id_num = args[1]
 
-        cls_obj = getattr(base_model, cls_name)
-        model = getattr(cls_obj, id_num)
-
-        if model is None:
+        if f"{cls_name}.{id_num}" not in storage.all():
             print("** no instance found **")
             return
 
-        print(model)
+        print(storage.all()[f"{cls_name}.{id_num}"])
 
     def postcmd(self, stop, line):
         """Program exit cleanly in response to the quit command
