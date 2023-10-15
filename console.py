@@ -157,8 +157,8 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
 
-        key = k.startswith(cls_name)
-        print([str(v) for k, v in storage.all().items() if key])
+        print([str(v) for k, v in storage.all().items()
+               if k.startswith(cls_name)])
 
     def do_update(self, line):
         """Updates an instance based on the class name and id
