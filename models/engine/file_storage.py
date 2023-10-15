@@ -4,8 +4,9 @@ file and deserializes JSON file to instances """
 import json
 import os
 
-from models.base_model import BaseModel
-from models.user import User
+#from models.base_model import BaseModel
+#from models.user import User
+from models import base_model, user, amenity, city, place, review, state
 
 
 class FileStorage():
