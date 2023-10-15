@@ -155,6 +155,7 @@ class HBNBCommand(cmd.Cmd):
 
         if cls_name not in self.__classes:
             print("** class doesn't exist **")
+            return
 
         key = k.startswith(cls_name)
         print([str(v) for k, v in storage.all().items() if key])
