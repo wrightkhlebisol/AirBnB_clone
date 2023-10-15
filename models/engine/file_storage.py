@@ -3,8 +3,7 @@
 file and deserializes JSON file to instances """
 import json
 import os
-from .. import base_model
-from models import user
+from models import base_model
 
 
 class FileStorage():
