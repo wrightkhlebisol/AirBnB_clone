@@ -147,7 +147,7 @@ class HBNBCommand(cmd.Cmd):
         args = line.split()
 
         if len(args) == 0:
-            print([str(value) for value in storage.all().value()])
+            print([str(value) for value in storage.all().values()])
 
         cls_name = args[0]
 
