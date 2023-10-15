@@ -270,6 +270,9 @@ class HBNBCommand(cmd.Cmd):
             elif cls_cmd.startswith("show"):
                 _id = cls_cmd.split('"')[1]
                 self.do_show(f"{cls_name} {_id}")
+            elif cls_cmd.startswith("destroy"):
+                _id = cls_cmd.split('"')[1]
+                self.do_destroy(f"{cls_name} {_id}")
 
     def postcmd(self, stop, line):
         """Program exit cleanly in response to the quit command
