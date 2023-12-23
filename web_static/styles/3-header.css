@@ -1,12 +1,12 @@
 header {
   background-color: white;
   height: 70px;
-  line-height: 70px;
+  display: grid;
   width: 100%;
   border-bottom: 1px solid #CCCCCC;
+  align-items: center;
 }
 
 header img {
   padding-left: 20px;
-  vertical-align: middle;
 }
